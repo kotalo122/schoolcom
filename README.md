@@ -50,9 +50,9 @@
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
-| event_day | string     | null: false                    |
+| event_day | date       | null: false                    |
 | title     | string     | null: false                    |
-| content   | string     | null: false                    |
+| content   | text       | null: false                    |
 | grade_id  | integer    | null: false                    |
 | user      | references | null: false, foreign_key: true |
 | room      | references | null: false, foreign_key: true |
