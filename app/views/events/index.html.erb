@@ -19,8 +19,8 @@
         </form>
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button>
-          <button type="button" class="btn btn-warning">Sign-up</button>
+          
+          <%= link_to current_user.name, edit_user_path(current_user), class: "btn btn-outline-light me-2", tag: "button", type: "button" %>
         </div>
       </div>
     </div>
