@@ -49,7 +49,7 @@
             <i>(保護者か教員を選んでください)</i>
           </div>
           <div class='field-input'>
-            <%= f.text_field :position_id , autocomplete: "off"%>
+          <%= f.collection_select(:position_id, Position.all, :id, :name, {}, {class:"position-select"}) %>
           </div>
         </div>
 
