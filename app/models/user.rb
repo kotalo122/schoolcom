@@ -9,4 +9,7 @@ class User < ApplicationRecord
     validates :position_id
     validates :position_code
   end
+
+  has_many :room_users
+  has_many :rooms, through: :room_users
 end
