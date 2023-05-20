@@ -1,3 +1,4 @@
+app/models/grade.rb
 class Grade < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
@@ -12,7 +13,6 @@ class Grade < ActiveHash::Base
     { id: 10, name: '９年生' },
     { id: 11, name: '全学年共通' }
   ]
-
   include ActiveHash::Associations
   has_many :rooms
   has_many :events
