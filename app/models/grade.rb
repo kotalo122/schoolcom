@@ -1,4 +1,3 @@
-app/models/grade.rb
 class Grade < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
