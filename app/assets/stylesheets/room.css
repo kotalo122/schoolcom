@@ -89,3 +89,8 @@ select {
   height: 80px;
   width: 100%;
 }
+
+.app_title a{
+  color: white;
+  text-decoration: none;
+}

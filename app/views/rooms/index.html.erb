@@ -1,6 +1,8 @@
 <header class="p-3 bg-dark text-white">
     <div class="container">
-    <h1 class="app_title"><%= link_to "すくーる大作戦", root_path, class: "app-title"%></h1>
+    <h1 class="app_title">
+    <%= link_to "すくーる大作戦", root_path, class: "app-title"%>
+    </h1>
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
           <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
@@ -26,11 +28,8 @@
     </div>
 </header>
 
-<div class="wrapper">
-  <div class="side-bar">
-    <%= render "side_bar" %>
-  </div>
-  <div class="chat">
-    <%= render "main_event" %>
+<div class='wrapper'>
+  <div class='side-bar'>
+    <%= render "events/side_bar" %>
   </div>
 </div>

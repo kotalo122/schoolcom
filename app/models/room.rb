@@ -4,6 +4,7 @@ class Room < ApplicationRecord
 
   has_many :room_users
   has_many :users, through: :room_users
+  has_many :events
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :grade
 end
