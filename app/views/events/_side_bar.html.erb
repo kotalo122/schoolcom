@@ -11,7 +11,7 @@
             <% @rooms.each do |room| %>
               <div class="nav-link link-dark">
                 <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
-                <%= link_to room.name, room_events_path(room) %></div>
+                <%= link_to room.name, room_events_path(room), class: "d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"%></div>
             <% end %>
           </li>
         
