@@ -4,46 +4,37 @@
       <%= @room.name %>
     </div>
   </div>
+  
   <div class="right-header">
-   <div class="new_event_button">
-      <%= link_to "イベントを投稿する", root_path %>
-    </div>
     <div class="header-button">
-     <%= link_to "クラスを消去する", root_path%>
+     <%= link_to "クラスを消去する", room_path(@room), method: :delete %>
     </div>
   </div>
 </div>
 
-<div class="events">
-  <div class="event">
-    <div class="upper-event">
-      <div class="event-user">
-        担任：○○
-      </div>
-      <div class="event-date">
-        2020/3/31(Wed) 12:43:30
-      </div>
-    </div>
-    <div class="lower-event">
-      <div class="event-content">
-        5月20日は運動会です。
-      </div>
-    </div>
-  </div>
+ 
 
-  <div class="event">
-    <div class="upper-event">
-      <div class="event-user">
-        担任：○○
-      </div>
-      <div class="event-date">
-        2020/3/31(Wed) 12:47:30
-      </div>
+<% if current_user.position_id == 3 %>
+  <%= form_with model: [@room, @event], class: 'form', local: true do |f| %>
+    <div class='upper-form'>
+      <%= f.date_field :event_day, class: 'form-date', placeholder: 'type a date' %>
+      <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"form-grade"})%>
+      <%= f.text_field :title, class: 'form-title', placeholder: 'type a title' %>
     </div>
-    <div class="lower-event">
-      <div class="event-content">
-        6月中に教材費の振込をお願いします。
+      <div class="form-input">
+        <%= f.text_area :content, class: 'form-message', placeholder: 'type a message' %>
+
+        <div class="form-image">
+          <label>
+            <span class="image-file">画像</span>
+            <%= f.file_field :image, class: 'hidden' %>
+          </label>
+        </div>
       </div>
-    </div>
-  </div>
+    <%= f.submit '送信', class: 'form-submit' %>
+  <% end %>
+<% end %>
+
+<div class="events">
+   <%= render partial: 'event', collection: @events %>
 </div>
