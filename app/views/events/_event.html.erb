@@ -14,5 +14,6 @@
     <div class="message-content">
       <%= event.content %>
     </div>
+      <%= image_tag event.image.variant(resize: '250x250'), class: 'message-image' if event.image.attached? %>
   </div>
 </div>
