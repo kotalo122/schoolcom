@@ -119,8 +119,8 @@
   background-color: white;
   width: 95%;
   display: flex;
-  justify-content: center; /* 水平方向の中央揃え */
-  align-items: center; /* 垂直方向の中央揃え */
+  justify-content: center;
+  align-items: center;
 }
 
 .form-message {
@@ -159,7 +159,9 @@
   display: none;
 }
 
-
+.field_with_errors {
+  display: contents;
+}
 
 /* --------------- */
 
