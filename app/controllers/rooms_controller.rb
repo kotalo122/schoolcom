@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
-  
+  before_action :move_to_index, only: [:new]
+
+
   def index
     @rooms = Room.all
   end
@@ -22,4 +24,11 @@ class RoomsController < ApplicationController
   def room_params
     params.require(:room).permit(:name, :grade_id, user_ids: [])
   end
+
+  def move_to_index
+    unless current_user.position_id == 3
+      redirect_to action: :index
+    end
+  end
+
 end
