@@ -1,19 +1,27 @@
-<div class="message">
-  <div class="upper-message">
-    <div class="message-user">
+<div class="event">
+  <div class="upper-event">
+    <div class="event-user">
       <%= event.user.name %>
     </div>
-    <div class="message-date">
-      <%= event.created_at %>
+    <div class="post-date">
+      投稿日：<%= event.created_at %>
     </div>
   </div>
-  <div class="lower-message">
-    <div class="message-date">
-      <%= event.event_day %>
+  <div class="lower-event">
+    <div class="event-date">
+      予定日：<%= event.event_day %>
     </div>
-    <div class="message-content">
-      <%= event.content %>
+    <div class="event-content">
+      内容：<%= event.content %>
     </div>
-      <%= image_tag event.image.variant(resize: '250x250'), class: 'message-image' if event.image.attached? %>
+    <div class="image-edit-delete">
+      <%= image_tag event.image.variant(resize: '250x250'), class: 'event-image' if event.image.attached? %>
+      <%= link_to "編集", edit_room_event_path(room_id: event.room_id, id: event.id), class: 'event-edit-delete' %>
+      <%= link_to "削除", room_event_path(room_id: event.room_id, id: event.id), method: :delete, class: 'event-edit-delete' %>
+    </div>
+  </div>
+  <div class="edit-delete">
+
   </div>
 </div>
+<hr>
