@@ -7,6 +7,10 @@
   width: calc(100vw - 300px);
 }
 
+.edit-header {
+  background-color: #50a4e5;
+}
+
 .chat-header {
   height: 100px;
   padding: 0 40px;
@@ -38,6 +42,7 @@
   color: #ece9e9;
   font-size: 38px;
   margin-top: 36px;
+  
 }
 
 .header-button {
@@ -60,32 +65,36 @@
 }
 
 .event {
-  margin: 10px 0 0 0;
+  margin: 30px;
 }
 
-.upper-message{
+.upper-event{
   display: flex;
 }
 
-.message-user {
+.event-user {
   color: #434a54;
   font-size: 16px;
 }
 
-.message-date {
+.event-date {
   color: #999;
   font-size: 12px;
   padding-left: 10px;
 }
 
-.lower-message {
+.lower-event {
   margin-top: 10px;
 }
 
-.message-content {
+.event-content {
   color: #434a54;
   font-size: 14px;
   margin-bottom: 40px;
+}
+
+.edit-delete {
+ 
 }
 
 .form {
@@ -123,7 +132,7 @@
   align-items: center;
 }
 
-.form-message {
+.form-event {
   height: 100px;
   width: 100%;
   padding-left: 10px;
