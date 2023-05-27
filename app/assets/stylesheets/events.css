@@ -186,6 +186,11 @@
   display: contents;
 }
 
+th {
+  font-family: Arial, sans-serif; /* 適切なフォントを指定してください */
+}
+
+
 /* --------------- */
 
 

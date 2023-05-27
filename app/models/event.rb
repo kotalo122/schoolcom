@@ -13,4 +13,8 @@ class Event < ApplicationRecord
   belongs_to :grade
   has_one_attached :image
 
+  def start_time
+    event_day.beginning_of_day
+  end
+
 end
