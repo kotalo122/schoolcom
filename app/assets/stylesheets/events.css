@@ -69,7 +69,7 @@
 }
 
 .upper-event{
-  display: flex;
+  /* display: flex; */
 }
 
 .event-user {
@@ -78,23 +78,37 @@
 }
 
 .event-date {
+  color: #434a54;
+  font-size: 14px;
+  /* padding-left: 10px; */
+}
+
+.post-date {
   color: #999;
   font-size: 12px;
   padding-left: 10px;
 }
 
 .lower-event {
-  margin-top: 10px;
+  margin: 10 0 20 0px;
 }
 
 .event-content {
   color: #434a54;
   font-size: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
 }
 
-.edit-delete {
- 
+.event-image {
+  margin:0 10px 0 0;
+}
+
+.image-edit-delete {
+  display: flex;  
+}
+
+.event-edit-delete {
+  margin-right: 10px;
 }
 
 .form {
