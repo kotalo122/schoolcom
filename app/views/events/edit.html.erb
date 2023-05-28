@@ -1,27 +1,40 @@
-<div class="edit-header">
-  <div class="left-header">
-    <div class="header-title">
-      <%= "#{@room.name} 編集" %>
+<%= render "events/header" %>
+
+<div class="edit-form">
+  <div class="wrapper">
+    <div class="side-bar">
+      <%= render "side_bar" %>
     </div>
+  </div>
+
+  <div class="edit-right">
+    <div class="edit-header">
+      <div class="left-header">
+        <div class="header-title">
+          <%= "#{@room.name} 　編集" %>
+        </div>
+      </div>
+    </div>
+
+    <% if current_user.position_id == 3 %>
+      <%= form_with model: [@room, @event], class: 'form', local: true do |f| %>
+        <div class='upper-form'>
+          <%= f.date_field :event_day, class: 'form-date', placeholder: 'type a date' %>
+          <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"form-grade"})%>
+          <%= f.text_field :title, class: 'form-title', placeholder: 'type a title' %>
+        </div>
+          <div class="form-input">
+            <%= f.text_area :content, class: 'form-event', placeholder: 'type a event' %>
+            <div class="form-image">
+              <label>
+                <span class="image-file">画像</span>
+                <%= f.file_field :image, class: 'hidden' %>
+              </label>
+            </div>
+          </div>
+        <%= f.submit '編集', class: 'form-submit' %>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
-<% if current_user.position_id == 3 %>
-  <%= form_with model: [@room, @event], class: 'form', local: true do |f| %>
-    <div class='upper-form'>
-      <%= f.date_field :event_day, class: 'form-date', placeholder: 'type a date' %>
-      <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"form-grade"})%>
-      <%= f.text_field :title, class: 'form-title', placeholder: 'type a title' %>
-    </div>
-      <div class="form-input">
-        <%= f.text_area :content, class: 'form-event', placeholder: 'type a event' %>
-        <div class="form-image">
-          <label>
-            <span class="image-file">画像</span>
-            <%= f.file_field :image, class: 'hidden' %>
-          </label>
-        </div>
-      </div>
-    <%= f.submit '編集', class: 'form-submit' %>
-  <% end %>
-<% end %>

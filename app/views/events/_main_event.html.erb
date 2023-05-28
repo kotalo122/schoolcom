@@ -4,12 +4,13 @@
       <%= @room.name %>
     </div>
   </div>
-  
+  <% if current_user.position_id == 3 %>
   <div class="right-header">
     <div class="header-button">
      <%= link_to "クラスを消去する", room_path(@room), method: :delete %>
     </div>
   </div>
+  <% end %>
 </div>
 
  
@@ -34,7 +35,19 @@
     <%= f.submit '送信', class: 'form-submit' %>
   <% end %>
 <% end %>
+  <br>
+    <div class="event-callender">
+      <%= month_calendar events: @events do |date, events| %>
+        <%= date.day %>
 
-<div class="events">
-   <%= render partial: 'event', collection: @events %>
-</div>
+        <% events.each do |event| %>
+          <div>
+            <%= link_to event.title, room_event_path(room_id: event.room_id, id: event.id), class: 'event-edit-delete' %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+
+<hr>
+<%= render partial:"event" ,collection: @events %>

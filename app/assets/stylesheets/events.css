@@ -2,13 +2,22 @@
   display: flex;
 }
 
-.chat {
-  background-color: #50a4e5;
+/* .chat {
+  background-color: #d3e4f2;
   width: calc(100vw - 300px);
 }
 
 .edit-header {
   background-color: #50a4e5;
+  width: calc(100vw - 300px);
+}
+
+.edit-right {
+  width: calc(100vw - 300px);
+} */
+
+.edit-form {
+  display: flex;
 }
 
 .chat-header {
@@ -25,6 +34,11 @@
   justify-content: space-between;
 
 }
+
+.show-upper {
+  display: flex;
+}
+
 .new_event_button {
   margin: 40px;
 }
@@ -41,8 +55,9 @@
 .header-title {
   color: #ece9e9;
   font-size: 38px;
-  margin-top: 36px;
-  
+  margin-top: 10px;
+  width:100%;
+  background-color: #38AEF0;
 }
 
 .header-button {
@@ -104,7 +119,7 @@
 }
 
 .image-edit-delete {
-  display: flex;  
+
 }
 
 .event-edit-delete {
@@ -186,6 +201,11 @@
   display: contents;
 }
 
+th {
+  font-family: Arial, sans-serif; /* 適切なフォントを指定してください */
+}
+
+
 /* --------------- */
 
 
@@ -228,3 +248,33 @@
   color: white;
   text-decoration: none;
 }
+
+.simple-calendar {
+  .day {
+    background: #f9f9f9;
+  }
+  .wday-0 {
+    background: #ffeaea;
+    color: #ff505c;
+  }
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {
+    background: #d4ebff;
+    color: #5984dc;
+  }
+  .today {
+    background: #FFA0A0;
+  }
+  .past {}
+  .future {}
+  .start-date {}
+  .prev-month {}
+  .next-month {}
+  .current-month {}
+  .has-events {}
+}
+

@@ -1,9 +1,11 @@
 class EventsController < ApplicationController
-  before_action :set_room, only: [:index, :create, :edit, :update]
+  before_action :set_room, only: [:index, :create, :edit, :update, :show]
+  before_action :set_beginning_of_week
   
   def index
     @event = Event.new
     @events = @room.events.includes(:user)
+    
   end
 
   def create
@@ -20,19 +22,23 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
  
-   def update
-     @event = Event.find(params[:id])
-     if @event.update(event_params)
-       redirect_to room_events_path
-     else
-       render :edit
-     end
-   end
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params)
+      redirect_to room_events_path
+    else
+      render :edit
+    end
+  end
 
-   def destroy
+  def destroy
     @event = Event.find(params[:id])
     @event.destroy
     redirect_to room_events_path
+  end
+
+  def show
+    @event = Event.find(params[:id])
   end
 
   private
@@ -44,6 +50,10 @@ class EventsController < ApplicationController
   def set_room
     @rooms = Room.all
     @room = Room.find(params[:room_id])
+  end
+
+  def set_beginning_of_week
+    Date.beginning_of_week = :sunday
   end
 
 end
