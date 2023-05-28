@@ -1,7 +1,7 @@
 <div class="event">
   <div class="upper-event">
     <div class="event-user">
-      <%= event.user.name %>
+      投稿者：<%= event.user.name %>
     </div>
     <div class="post-date">
       投稿日：<%= event.created_at %>
@@ -16,20 +16,12 @@
     </div>
     <div class="image-edit-delete">
       <%= image_tag event.image.variant(resize: '250x250'), class: 'event-image' if event.image.attached? %>
+    </div>
+      <% if current_user.position_id == 3 %>
       <%= link_to "編集", edit_room_event_path(room_id: event.room_id, id: event.id), class: 'event-edit-delete' %>
       <%= link_to "削除", room_event_path(room_id: event.room_id, id: event.id), method: :delete, class: 'event-edit-delete' %>
-    </div>
+      <% end %>
   </div>
 </div>
 
 <hr>
-
-<%= month_calendar events: @events do |date, events| %>
-  <%= date.day %>
-
-  <% events.each do |event| %>
-    <div>
-      <%= event.title %>
-    </div>
-  <% end %>
-<% end %>

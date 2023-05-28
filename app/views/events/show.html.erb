@@ -1,0 +1,37 @@
+<%= render "events/header" %>
+
+  <div class="show-upper">
+    <div class="show-sidebar">
+      <%= render "events/side_bar" %>
+    </div>
+
+    <div class="edit-right">
+      <div class="edit-header">
+        <div class="header-title">
+          <%= "#{@room.name} 詳細" %>
+        </div>
+      </div>
+        <div class="event">
+          <div class="event-user">
+            投稿者：<%= @event.user.name %>
+          </div>
+          <div class="event-date">
+            予定日：<%= @event.event_day %>
+          </div>
+          <div class="event-content">
+            内容：<%= @event.content %>
+          </div>
+          <div class="image-edit-delete">
+            <%= image_tag @event.image.variant(resize: '500x500'), class: 'event-image' if @event.image.attached? %>
+
+          </div>
+          <div class="post-date">
+            投稿日：<%= @event.created_at %>
+            <% if current_user.position_id == 3 %>
+           <% end %>
+          </div>
+            <%= link_to "編集", edit_room_event_path(room_id: @event.room_id, id: @event.id), class: 'event-edit-delete' %>
+            <%= link_to "削除", room_event_path(room_id: @event.room_id, id: @event.id), method: :delete, class: 'event-edit-delete' %>
+        </div>
+    </div>
+  </div> 
