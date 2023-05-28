@@ -19,7 +19,6 @@
   <%= form_with model: [@room, @event], class: 'form', local: true do |f| %>
     <div class='upper-form'>
       <%= f.date_field :event_day, class: 'form-date', placeholder: 'type a date' %>
-      <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"form-grade"})%>
       <%= f.text_field :title, class: 'form-title', placeholder: 'type a title' %>
     </div>
       <div class="form-input">
@@ -39,7 +38,6 @@
     <div class="event-callender">
       <%= month_calendar events: @events do |date, events| %>
         <%= date.day %>
-
         <% events.each do |event| %>
           <div>
             <%= link_to event.title, room_event_path(room_id: event.room_id, id: event.id), class: 'event-edit-delete' %>
@@ -50,4 +48,4 @@
 
 
 <hr>
-<%= render partial:"event" ,collection: @events %>
+<%= render partial:"event" , collection: @events %>
