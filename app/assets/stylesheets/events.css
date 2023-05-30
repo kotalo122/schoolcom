@@ -2,8 +2,8 @@
   display: flex;
 }
 
-/* .chat {
-  background-color: #d3e4f2;
+.chat {
+  background-color: #fffbfb;
   width: calc(100vw - 300px);
 }
 
@@ -14,7 +14,7 @@
 
 .edit-right {
   width: calc(100vw - 300px);
-} */
+}
 
 .edit-form {
   display: flex;
@@ -163,7 +163,7 @@
 
 .form-event {
   height: 100px;
-  width: 100vh;
+  width: 100%;
   padding-left: 10px;
   border: none;
 }
