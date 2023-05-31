@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :rooms, through: :room_users
   has_many :events
+  has_many :comments
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :position
 end

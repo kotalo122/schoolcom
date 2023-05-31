@@ -9,9 +9,11 @@ class Event < ApplicationRecord
 
   belongs_to :room
   belongs_to :user
+  has_many :comments
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :grade
   has_one_attached :image
+
 
   def start_time
     event_day.beginning_of_day
