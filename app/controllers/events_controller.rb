@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_room, only: [:index, :create, :edit, :update, :show]
+  before_action :set_room, only: [:index, :create, :edit, :update, :show, :destroy]
   before_action :set_beginning_of_week
   
   def index
