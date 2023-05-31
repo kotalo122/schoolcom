@@ -9,7 +9,8 @@ class Event < ApplicationRecord
 
   belongs_to :room
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :grade
   has_one_attached :image
