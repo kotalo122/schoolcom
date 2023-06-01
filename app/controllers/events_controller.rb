@@ -41,6 +41,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @comments = @event.comments.includes(:user)
     @comment = Comment.new
+    @like_count = Like.where(event_id: @event.id).count
   end
 
 
