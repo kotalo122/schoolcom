@@ -30,9 +30,12 @@
             <% if current_user.position_id == 3 %>
            <% end %>
           </div>
+           <% if current_user.position_id == 3 %>
             <%= link_to "編集", edit_room_event_path(room_id: @event.room_id, id: @event.id), class: 'event-edit-delete' %>
             <%= link_to "削除", room_event_path(room_id: @event.room_id, id: @event.id), method: :delete, class: 'event-edit-delete' %>
+          <% end %>
         </div>
+        <%= render partial: "events/like", locals: { event: @event } %>
 <hr>
         <div id="comments">
           <h4>＜コメント一覧＞</h4>

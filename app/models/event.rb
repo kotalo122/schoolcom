@@ -9,7 +9,8 @@ class Event < ApplicationRecord
 
   belongs_to :room
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :grade
   has_one_attached :image
@@ -17,6 +18,10 @@ class Event < ApplicationRecord
 
   def start_time
     event_day.beginning_of_day
+  end
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
   end
 
 end
