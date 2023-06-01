@@ -1,0 +1,7 @@
+<div id="like-btn<%= event.id %>">
+<% if user_signed_in? && event.liked_by?(current_user) %>
+  <%= link_to "❤️", room_event_like_path(id: event.room_id, event_id: event.id), method: :delete, class: "event_likes", remote: true %>
+<% else %>
+  <%= link_to "🖤", room_event_likes_path(id: event.room_id, event_id: event.id), method: :post, class: "event_likes", remote: true %>
+<% end %>
+</div>
