@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   before_action :move_to_index, only: [:new]
-
+  before_action :move_to_index, only: [:create, :destroy]
 
   def index
     @rooms = Room.all

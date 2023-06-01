@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_room, only: [:index, :create, :edit, :update, :show, :destroy]
   before_action :set_beginning_of_week
+  before_action :move_to_index, only: [:create, :edit, :update, :destroy]
   
   def index
     @event = Event.new
@@ -58,6 +59,12 @@ class EventsController < ApplicationController
 
   def set_beginning_of_week
     Date.beginning_of_week = :sunday
+  end
+
+  def move_to_index
+    unless current_user.position_id == 3
+      redirect_to action: :index
+    end
   end
 
 end
