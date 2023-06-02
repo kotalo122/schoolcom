@@ -14,12 +14,13 @@
 </div>
 
 <% if current_user.position_id == 3 %>
-  <%= form_with model: [@room, @event], class: 'form', local: true do |f| %>
-        <div class='upper-form'>
+  <%= form_with model: [@room, @event], id: 'new_event', class: 'form', local: true do |f| %>
+    <div class='upper-form'>
       <%= f.date_field :event_day, class: 'form-date', placeholder: 'type a date' %>
       <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"form-grade"})%>
       <%= f.text_field :title, class: 'form-title', placeholder: 'type a title' %>
     </div>
+    <div class="form-all">
       <div class="form-input">
         <%= f.text_area :content, class: 'form-event', placeholder: 'type a event' %>
         <div class="form-image">
@@ -29,6 +30,8 @@
           </label>
         </div>
       </div>
+      <div id="previews" class="image-preview"></div>
+    </div>
     <%= f.submit '送信', class: 'form-submit' %>
   <% end %>
 <% end %>
