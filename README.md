@@ -37,10 +37,11 @@ https://docs.google.com/spreadsheets/d/1DXXuyR6G4zimf6xtnjbohJ49aFcfbGk6Qb-Irps5
 * お問い合わせ機能
 
 # データベース設計	
-![](2023-05-27-10-48-56.png)
+<img width="823" alt="データベース設計 2023-06-09 1 15 37" src="https://github.com/kotalo122/schoolcom/assets/122679002/ddb3df51-555c-4893-acbd-9170c167e996">
 
 # 画面遷移図	
-画面遷移図を添付。
+<img width="1028" alt="画面遷移図2023-06-09 12 49 32" src="https://github.com/kotalo122/schoolcom/assets/122679002/3ee8f3dd-9eb8-4f33-b36e-a7960a323d9e">
+
 
 # 開発環境	
 フロントエンド
