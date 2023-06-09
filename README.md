@@ -122,3 +122,26 @@ git cloneしてから、ローカルで動作をさせるまでに必要なコ�
 - belongs_to :room
 - belongs_to :user
 
+## comments テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| content   | text       | null: false                    |
+| user      | references | null: false, foreign_key: true |
+| event     | references | null: false, foreign_key: true |
+
+### Association
+
+ - belongs_to :user
+ - belongs_to :event
+
+## comments テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| event     | references | null: false, foreign_key: true |
+
+### Association
+ - belongs_to :user
+ - belongs_to :event
