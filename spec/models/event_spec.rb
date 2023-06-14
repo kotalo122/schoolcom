@@ -5,8 +5,8 @@ RSpec.describe Event, type: :model do
     @event = FactoryBot.build(:event)
   end
 
-  describe 'メッセージ投稿' do
-    context 'メッセージが投稿できる場合' do
+  describe 'イベント投稿' do
+    context 'イベントが投稿できる場合' do
       it '日付、title、content、grade_idが存在していれば保存できる' do
         expect(@event).to be_valid
       end
@@ -15,7 +15,7 @@ RSpec.describe Event, type: :model do
         expect(@event).to be_valid
       end
     end
-    context 'メッセージが投稿できない場合' do
+    context 'イベントが投稿できない場合' do
       it '日付が空では保存できない' do
         @event.event_day = ''
         @event.valid?
