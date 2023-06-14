@@ -4,12 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+    VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+    validates :password, format: { with: VALID_PASSWORD_REGEX }
+
     with_options presence: true do
     validates :name
-    validates :position_id
-    validates :position_code
+    validates :position_id, numericality: { other_than: 1 , message: "can't be blank"}
+    validates :position_code, length: { minimum: 4, maximum: 11 }, format: { with: /\A[0-9]+\z/ }
   end
-  validates :position_id, numericality: { other_than: 1 , message: "can't be blank"}
+
+  
 
   has_many :room_users
   has_many :rooms, through: :room_users
