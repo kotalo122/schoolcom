@@ -7,7 +7,7 @@
       <%= link_to "チャットページに戻る", root_path, class: 'btn'%>
     </div>
     <div class='account-page__inner--right user-form'>
-      <%= form_with model: current_user, local: true do |f|%>
+      <%= form_with model: current_user, url: user_path, local: true do |f|%>
         <div class='field'>
           <div class='field-label'>
             <%= f.label :namae, '名前'%><br>
