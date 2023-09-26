@@ -29,7 +29,9 @@ class RoomsController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:name, :grade_id, user_ids: [])
+    # user_idが必要になったら戻す
+    # params.require(:room).permit(:name, :grade_id, user_ids: [])
+    params.require(:room).permit(:name, :grade_id)
   end
 
   def move_to_index
