@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
     VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-    # user編集画面にパスワード欄を入れたらコメントアウトを戻す
     # validates :password, format: { with: VALID_PASSWORD_REGEX }
 
     with_options presence: true do
